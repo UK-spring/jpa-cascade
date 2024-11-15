@@ -17,6 +17,8 @@ public class Category {
 
      @OneToMany(mappedBy = "category")
 //    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
+//    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, orphanRemoval = true)
+//@OneToMany(mappedBy = "category", orphanRemoval = true)
     private List<Product> productList = new ArrayList<>();
 
     public Category() {
@@ -32,6 +34,10 @@ public class Category {
 
     public String getName() {
         return name;
+    }
+
+    public List<Product> getProductList() {
+        return productList;
     }
 
     public void addProduct(Product product) {
